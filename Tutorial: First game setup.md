@@ -127,6 +127,8 @@ _sprite(player_icon, player_pos_x,player_pos_y, 1,1,player_size,player_size)_
 Notice the 1,1 in this line? That is because this methods also allows you to draw multiple iamges (sprites) with this command. 
 For this game we only need one icon, so this options can be ignored.
 
+![image](https://github.com/Blittyhat33/Picosystem-Micropython/assets/131597538/b2973216-f371-437a-b8cc-c928c87980fe)
+
 Next step is the movement of the player.
 
 
