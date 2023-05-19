@@ -92,12 +92,45 @@ It needs an x and y starint coordinate and (because it is an horizontal line) th
 
 _hline(0,12,WINDOW_WIDTH)_
 
-Nice, but to create some basic gameplay, we at least need a player!
+![image](https://github.com/Blittyhat33/Picosystem-Micropython/assets/131597538/fac8016a-0bfe-4b2c-ae4e-bcbb6cad551d)
+
+Nice, but to create some basic gameplay, we at least need a **player**!
 
 ## Blitting the player
 
 The device is packed with a nice set of images (sprites). This way we don't have to create all images using only primitive shapes.
 To place an image on the screen we can use a technique called 'blitting'.
+But before we do this, we will create a number of new variables.
+
+First we need an icon. There are a large number of icons to choose from, but we will start with something that looks a bit like a cat.
+
+_player_icon = 184_
+
+Next we will position the player on the screen. Of course the player will move later on, but for now the posittion needs to be close to the left edge of the screen.
+First we will position the player on the y axis, somewhere in the middle.
+
+_player_y = WINDOW_HEIGHT//2_
+
+The x position will be done in a similar way:
+
+_player_x = WINDOW_WIDTH//10
+
+To ensure that the icon is visible, we will use an size of 20. Note that you can stretch images, but for the player icon this will cause serious distortions.
+We will use the same variable for bot the widt and height.
+
+_player_size = 20_
+
+Now whe only have to add one extra line to our draw script:
+
+_sprite(player_icon, player_pos_x,player_pos_y, 1,1,player_size,player_size)_
+
+Notice the 1,1 in this line? That is because this methods also allows you to draw multiple iamges (sprites) with this command. 
+For this game we only need one icon, so this options can be ignored.
+
+Next step is the movement of the player.
+
+
+
 
 
 
