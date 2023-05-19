@@ -42,7 +42,7 @@ For example:
 - White = Pen(15,15,15)
 - Green = Pen(0,15,0)
 
-For our background we will use: Pen(2,10,3).
+For our background we will use: _Pen(2,10,3)_.
 
 This is something that should be the first step in our draw(tick) part. 
 To tell the picosystem that this color should be used to clear the screen, we simply add a line with 'clear()'.
@@ -53,7 +53,61 @@ The script now looks like this:
 Run the script and the Picosytem should have a greenish screen.
 Both the update and draw part of the script run every 'tick'. This makes sure that everything that is drawn to the screen gets erased every frame.
 
+## Drawing a HUD (Head up Display)
 
+To keep track of progress it is a good step to display a score and a number of lives the player currently has.
+For this part of the tutorial there will not be an mechanism in place for this part of the gameplay.
+The setup however, is crucial and is done in this part.
+
+To do this, we will create an variable on top of our script with the name 'score' and 'lives'.
+
+_player_lives = 3
+score = 0_
+
+We will also use an variable with the horizontal an vertical display size.
+_WINDOW_WIDTH = 120
+WINDOW_HEIGHT = 120_
+
+Now we have to display this on our background. 
+In our draw(tick) part we will add a new line (below clear()).
+To make the new input visible, a new color should be chosen.
+In this example we will use light blue.
+
+We can use the variables to generate a score and lives text field.
+The command to add text to the display is text(). This command takes 3 parameters: the text, x and y.
+For this game we want to place the text of the score in the middle and the player lives in the top left corner.
+This is done by using the command:
+
+_text("Lives: "+ str(player_lives),0 , 3)_
+
+Note the y coordinate of _3_: this is to ensure readibility.
+
+To display the score: we should use the window width and divide this by 2.
+To make sure the result is an integer (in this case that is not an issue), it is a good custom to use whole integer division:
+
+_text("Score: "+ str(score),WINDOW_WIDTH//2,3)_
+
+To finish this HUD we will draw a primitive shape: a horizontal line.
+It needs an x and y starint coordinate and (because it is an horizontal line) the size. In this case that would be the whole screen.
+
+_hline(0,12,WINDOW_WIDTH)_
+
+Nice, but to create some basic gameplay, we at least need a player!
+
+## Blitting the player
+
+The device is packed with a nice set of images (sprites). This way we don't have to create all images using only primitive shapes.
+To place an image on the screen we can use a technique called 'blitting'.
+
+
+
+
+
+
+
+
+
+ 
 
 
 
